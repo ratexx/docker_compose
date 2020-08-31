@@ -1,0 +1,12 @@
+services:
+  sm-mongo-integrate:
+    image: mongo
+    container_name: sm-mongo-integrate
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./db:/data/sm_mongo/
