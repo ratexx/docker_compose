@@ -1,0 +1,18 @@
+version : "3.1"
+services : 
+    ec-be : 
+        image : kietara/eclaim-backend:1.0.0
+        container_name : ec-con-be
+        ports : 
+            - "8080:8080"
+        environment : 
+            - "spring.profiles.active=test"
+            
+    
+    ec-fe : 
+        image : kietara/eclaim-frontend:1.0.0
+        container_name : ec-con-fe
+        ports :
+            - "8081:8081"
+        environment : 
+            - "VUE_APP_BACKEND=http://127.0.0.1:8080/eclaim"

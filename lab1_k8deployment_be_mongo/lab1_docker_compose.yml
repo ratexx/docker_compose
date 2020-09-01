@@ -1,0 +1,20 @@
+version : '3.1'
+
+services:
+    sm-event-repo-be:
+        image: kietara/eventrepo-backend:1.0.0
+        container_name: sm-con-be
+        ports:
+            - "8291:8291"
+        volumes:
+            - ./log:/log
+            - ./libjava:/libjava
+            - ./config:/config    
+    # sm-event-repo-fe:
+    #     image: kietara/eventrepo-frontend:1.0.0
+    #     container_name: sm-con-fe
+    #     environment: 
+    #         - "VUE_APP_API_EVENT=http://localhost:8291"
+    #     ports:
+    #         - "8080:8080"
+        
